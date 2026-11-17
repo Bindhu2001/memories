@@ -10,7 +10,7 @@ A romantic landing page plus a shared photo gallery. Photos, dates and notes are
 ## Background image
 Save your photo as `images/bg.jpg`. It is used automatically.
 
-## Google Drive setup (one time, signed in as ab.memoryvault@gmail.com)
+## Google Drive setup (one time, signed in as memoriesofus.ab@gmail.com)
 1. Go to <https://script.google.com> → **New project**.
 2. Paste in `apps-script/Code.gs`, and change `PASSPHRASE`.
 3. Press **Run** on `doGet` once and approve the Drive permission. This creates the **Memories** folder in Drive.

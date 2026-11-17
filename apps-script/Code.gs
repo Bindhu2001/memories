@@ -1,5 +1,5 @@
 /**
- * Memory Vault backend. Runs as ab.memoryvault@gmail.com and stores photos
+ * Memory Vault backend. Runs as memoriesofus.ab@gmail.com and stores photos
  * (plus date + note) in a Drive folder called "Memories".
  *
  * 1. CHANGE the PASSPHRASE below.
