@@ -181,7 +181,46 @@ body {
 .viewer .date { color: #ffb3c9; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
 .viewer .note { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; line-height: 1.7; margin-top: 8px; }
 
+/* ---------- Mobile ---------- */
+html { -webkit-text-size-adjust: 100%; }
+body { -webkit-tap-highlight-color: transparent; overflow-x: hidden; }
+img { max-width: 100%; }
+
+/* fixed backgrounds are janky / broken on iOS, so scroll on touch devices */
+@media (hover: none), (max-width: 900px) {
+  .hero { background-attachment: scroll; }
+}
+
 @media (max-width: 600px) {
-  .gallery { columns: 2 150px; column-gap: 12px; padding: 0 12px; }
-  .card { margin-bottom: 12px; }
+  .hero { min-height: 100vh; min-height: 100svh; padding: 20px 18px; }
+  .eyebrow { font-size: 11px; letter-spacing: .28em; }
+  .verse { line-height: 1.7; margin: 20px auto 30px; }
+  .verse br { display: none; }               /* let lines wrap naturally */
+  .hero-actions { flex-direction: column; align-items: stretch; gap: 12px; max-width: 320px; margin: 0 auto; }
+  .btn { padding: 14px 20px; text-align: center; min-height: 48px; }
+
+  .topbar { padding: 14px 16px; }
+  .page-head { padding: 8px 16px 4px; }
+  .toolbar { padding: 0 16px; }
+  .toolbar .btn { flex: 1 1 140px; padding: 12px 14px; }
+
+  .gallery { columns: 2 140px; column-gap: 10px; padding: 0 10px; margin-bottom: 40px; }
+  .card { margin-bottom: 10px; border-radius: 12px; }
+  .card:hover { transform: none; }
+  .card .meta { padding: 10px 12px 14px; }
+  .card .note { font-size: 14px; line-height: 1.5; }
+
+  /* modals become bottom sheets */
+  .modal { padding: 0; align-items: flex-end; }
+  .modal-box { width: 100%; border-radius: 20px 20px 0 0; padding: 22px 18px calc(22px + env(safe-area-inset-bottom)); max-height: 94vh; }
+  .modal-box input, .modal-box textarea { font-size: 16px; }   /* stops iOS zoom-on-focus */
+  .modal-actions .btn { flex: 1; }
+  .viewer { align-items: center; padding: 12px; }
+  .viewer .modal-box { border-radius: 16px; padding: 0; }
+  .viewer img { max-height: 60vh; }
+  .viewer .note { font-size: 17px; }
+}
+
+@media (max-width: 360px) {
+  .gallery { columns: 1; }
 }
