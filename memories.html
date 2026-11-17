@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Memories 📸</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page">
+  <div class="topbar">
+    <a href="index.html">← Home</a>
+    <a href="letter.html">💌 Letter</a>
+  </div>
+
+  <header class="page-head">
+    <h1>Our Memories</h1>
+    <p>Every picture holds a moment we never want to forget.</p>
+  </header>
+
+  <div class="toolbar">
+    <button class="btn btn-primary" id="addBtn">＋ Add a Memory</button>
+    <button class="btn btn-ghost" id="refreshBtn">↻ Refresh</button>
+  </div>
+  <div class="status" id="status"></div>
+
+  <main class="gallery" id="gallery"></main>
+
+  <!-- Add memory -->
+  <div class="modal" id="addModal">
+    <form class="modal-box" id="addForm">
+      <h2>New Memory</h2>
+      <label for="photo">Photo</label>
+      <input type="file" id="photo" accept="image/*" required>
+      <img class="preview" id="preview" alt="">
+      <label for="date">Date</label>
+      <input type="date" id="date" required>
+      <label for="note">Memory note</label>
+      <textarea id="note" placeholder="What made this moment special?"></textarea>
+      <label for="key">Passphrase (only you two know it)</label>
+      <input type="password" id="key" autocomplete="off" required>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" id="cancelBtn">Cancel</button>
+        <button type="submit" class="btn btn-primary" id="saveBtn">Save to Drive</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Viewer -->
+  <div class="modal viewer" id="viewer">
+    <div class="modal-box">
+      <img id="viewImg" alt="">
+      <div class="meta">
+        <div class="date" id="viewDate"></div>
+        <div class="note" id="viewNote"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/memories.js"></script>
+</body>
+</html>

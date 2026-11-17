@@ -1,58 +1,24 @@
-# 💕 Valentine Love Letter
+# 💕 Memories
 
-A beautiful, interactive love letter with animated rose and floating hearts.
+A romantic landing page plus a shared photo gallery. Photos, dates and notes are stored in a Google Drive folder.
 
-## ✨ Features
+## Pages
+- `index.html` – landing page (background image + words)
+- `memories.html` – gallery; **Add a Memory** uploads a photo + date + note to Drive
+- `letter.html` – the original animated envelope love letter
 
-- 🌹 **Animated Rose** - Watch a beautiful rose bloom with petals appearing one by one
-- 💌 **Envelope Animation** - Click to open an elegant envelope reveal
-- 💕 **Floating Hearts** - Romantic hearts floating in the background
-- ✨ **Sparkles** - Magical sparkle effects around the rose
-- 📧 **Send Email** - Button to send the love letter via email
-- 📱 **Fully Responsive** - Works perfectly on all devices
+## Background image
+Save your photo as `images/bg.jpg`. It is used automatically.
 
-## 🚀 Live Demo
+## Google Drive setup (one time, signed in as ab.memoryvault@gmail.com)
+1. Go to <https://script.google.com> → **New project**.
+2. Paste in `apps-script/Code.gs`, and change `PASSPHRASE`.
+3. Press **Run** on `doGet` once and approve the Drive permission. This creates the **Memories** folder in Drive.
+4. **Deploy → New deployment → Web app** → Execute as **Me**, access **Anyone** → Deploy.
+5. Copy the Web app URL into `js/config.js` (`scriptUrl`).
+6. In Drive, share the **Memories** folder with the email IDs you want to have direct access.
 
-Visit the live demo: [Your GitHub Pages URL will be here]
+Uploading from the site needs the passphrase. Anyone can *view* the gallery, but photos are only reachable through their long Drive IDs.
 
-## 🎯 How to Use
-
-1. Open the page in your browser
-2. Click the envelope to reveal the love letter
-3. Watch the beautiful rose bloom
-4. Click "Send This Love Letter" to share it via email
-
-## 💻 Local Development
-
-Simply open `index.html` in your browser - no build process needed!
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/valentine-love-letter.git
-
-# Open in browser
-start index.html
-```
-
-## 🎨 Technologies Used
-
-- Pure HTML5
-- CSS3 with animations
-- Vanilla JavaScript
-- Google Fonts (Great Vibes, Playfair Display, Poppins)
-
-## 💝 Customization
-
-You can easily customize the message by editing the text in `index.html`:
-- Change the love message
-- Update the recipient email
-- Modify colors and animations
-- Add your own personal touch
-
-## 📄 License
-
-Free to use for personal romantic purposes! 💕
-
----
-
-Made with ❤️ for someone special
+## Run locally
+Open `index.html` in a browser.
