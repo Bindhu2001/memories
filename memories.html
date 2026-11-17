@@ -10,35 +10,62 @@
 <body class="page">
   <div class="topbar">
     <a href="index.html">← Home</a>
-    <a href="letter.html">💌 Letter</a>
   </div>
 
-  <header class="page-head">
-    <h1>Our Memories</h1>
-    <p>Every picture holds a moment we never want to forget.</p>
-  </header>
+  <!-- ===== Albums list (grouped by month) ===== -->
+  <section id="albumsView">
+    <header class="page-head">
+      <h1>Our Memories</h1>
+      <p>Every trip, every day — saved forever.</p>
+    </header>
+    <div class="toolbar">
+      <button class="btn btn-primary" id="newAlbumBtn">＋ New Album</button>
+      <button class="btn btn-ghost" id="refreshBtn">↻ Refresh</button>
+    </div>
+    <div class="status" id="status"></div>
+    <main id="albums"></main>
+  </section>
 
-  <div class="toolbar">
-    <button class="btn btn-primary" id="addBtn">＋ Add a Memory</button>
-    <button class="btn btn-ghost" id="refreshBtn">↻ Refresh</button>
-  </div>
-  <div class="status" id="status"></div>
+  <!-- ===== Single album ===== -->
+  <section id="albumView" hidden>
+    <div class="album-nav"><a href="#" id="backLink">← All albums</a></div>
+    <header class="page-head">
+      <h1 id="albumTitle"></h1>
+      <p id="albumMeta"></p>
+    </header>
+    <div class="toolbar">
+      <button class="btn btn-primary" id="addPhotosBtn">＋ Add photos &amp; videos</button>
+    </div>
+    <div class="status" id="albumStatus"></div>
+    <div class="media-grid" id="mediaGrid"></div>
+  </section>
 
-  <main class="gallery" id="gallery"></main>
+  <!-- ===== Create album / add files ===== -->
+  <div class="modal" id="uploadModal">
+    <form class="modal-box" id="uploadForm">
+      <h2 id="uploadTitle">New Album</h2>
 
-  <!-- Add memory -->
-  <div class="modal" id="addModal">
-    <form class="modal-box" id="addForm">
-      <h2>New Memory</h2>
-      <label for="photo">Photo</label>
-      <input type="file" id="photo" accept="image/*" required>
-      <img class="preview" id="preview" alt="">
-      <label for="date">Date</label>
-      <input type="date" id="date" required>
-      <label for="note">Memory note</label>
-      <textarea id="note" placeholder="What made this moment special?"></textarea>
+      <div id="albumFields">
+        <label for="albumName">Album name</label>
+        <input type="text" id="albumName" placeholder="e.g. Ooty Trip">
+        <label for="albumDate">Date</label>
+        <input type="date" id="albumDate">
+        <label for="albumNote">Memory note</label>
+        <textarea id="albumNote" placeholder="What made this trip special?"></textarea>
+      </div>
+
+      <label for="files">Photos &amp; videos (select many)</label>
+      <input type="file" id="files" accept="image/*,video/*" multiple>
+      <div class="file-count" id="fileCount"></div>
+
       <label for="key">Passphrase (only you two know it)</label>
       <input type="password" id="key" autocomplete="off" required>
+
+      <div class="progress" id="progress" hidden>
+        <div class="bar"><div class="fill" id="fill"></div></div>
+        <div class="ptext" id="ptext"></div>
+      </div>
+
       <div class="modal-actions">
         <button type="button" class="btn btn-ghost" id="cancelBtn">Cancel</button>
         <button type="submit" class="btn btn-primary" id="saveBtn">Save to Drive</button>
@@ -46,15 +73,15 @@
     </form>
   </div>
 
-  <!-- Viewer -->
+  <!-- ===== Viewer ===== -->
   <div class="modal viewer" id="viewer">
+    <button class="nav prev" id="prevBtn" aria-label="Previous">‹</button>
     <div class="modal-box">
-      <img id="viewImg" alt="">
-      <div class="meta">
-        <div class="date" id="viewDate"></div>
-        <div class="note" id="viewNote"></div>
-      </div>
+      <div class="stage" id="stage"></div>
+      <div class="meta"><div class="date" id="viewCount"></div></div>
     </div>
+    <button class="nav next" id="nextBtn" aria-label="Next">›</button>
+    <button class="close" id="closeViewer" aria-label="Close">✕</button>
   </div>
 
   <script src="js/config.js"></script>
