@@ -40,7 +40,7 @@
       status.textContent = '';
       box.innerHTML = '';
       if (!albums.length) {
-        box.innerHTML = '<div class="empty">No albums yet — create your first one 💕</div>';
+        box.innerHTML = '<div class="empty">No albums yet. Create your first one.</div>';
         return;
       }
       const groups = {};
@@ -69,7 +69,7 @@
       const img = document.createElement('img');
       img.loading = 'lazy'; img.alt = ''; img.src = thumb(a.cover, 600);
       cover.appendChild(img);
-    } else cover.textContent = '📷';
+    }
     const info = document.createElement('div');
     info.className = 'info';
     const t = document.createElement('div'); t.className = 'title'; t.textContent = a.name;
@@ -95,7 +95,7 @@
       current = a;
       $('albumTitle').textContent = a.name;
       $('albumMeta').textContent = [fmtDate(a.date), a.note].filter(Boolean).join(' — ');
-      status.textContent = a.items.length ? '' : 'No photos yet — add some 💕';
+      status.textContent = a.items.length ? '' : 'No photos yet. Add some.';
       a.items.forEach((m, i) => {
         const cell = document.createElement('div');
         cell.className = 'media-item';

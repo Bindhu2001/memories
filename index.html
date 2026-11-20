@@ -4,24 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#2a0f24">
-  <title>Our 4 Year Love Anniversary 💕</title>
+  <title>Our 4 Year Love Anniversary</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="landing">
+  <!-- Layered pink heart, reused everywhere on this page -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="ph-mid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffa6cb"/><stop offset="1" stop-color="#ff6fa8"/></linearGradient>
+      <linearGradient id="ph-core" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5b9b"/><stop offset="1" stop-color="#ff2f7c"/></linearGradient>
+      <symbol id="pheart" viewBox="0 0 24 24">
+        <path fill="#ffc9de" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.3 4.5c2.2 0 3.9 1.3 5.7 3.4 1.8-2.1 3.5-3.4 5.7-3.4 3.7 0 5.4 3.9 3.9 7.3C19.5 16.4 12 21 12 21z"/>
+        <path fill="url(#ph-mid)" transform="translate(12 12.5) scale(.78) translate(-12 -12.5)" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.3 4.5c2.2 0 3.9 1.3 5.7 3.4 1.8-2.1 3.5-3.4 5.7-3.4 3.7 0 5.4 3.9 3.9 7.3C19.5 16.4 12 21 12 21z"/>
+        <path fill="url(#ph-core)" transform="translate(12 12.8) scale(.5) translate(-12 -12.8)" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.3 4.5c2.2 0 3.9 1.3 5.7 3.4 1.8-2.1 3.5-3.4 5.7-3.4 3.7 0 5.4 3.9 3.9 7.3C19.5 16.4 12 21 12 21z"/>
+      </symbol>
+    </defs>
+  </svg>
+
   <!-- Photo collage background -->
   <div class="collage" aria-hidden="true">
     <div class="tile" style="background-image:url('images/collage/1.jpg')"></div>
-    <div class="tile" style="background-image:url('images/collage/7.jpg')"></div>
+    <div class="tile" style="background-image:url('images/collage/4.jpg')"></div>
     <div class="tile" style="background-image:url('images/collage/2.jpg')"></div>
     <div class="tile" style="background-image:url('images/collage/8.jpg')"></div>
-    <div class="tile" style="background-image:url('images/collage/3.jpg')"></div>
+    <div class="tile" style="background-image:url('images/collage/7.jpg')"></div>
     <div class="tile" style="background-image:url('images/collage/9.jpg')"></div>
-    <div class="tile" style="background-image:url('images/collage/4.jpg')"></div>
+    <div class="tile" style="background-image:url('images/collage/12.jpg')"></div>
     <div class="tile" style="background-image:url('images/collage/10.jpg')"></div>
     <div class="tile" style="background-image:url('images/collage/5.jpg')"></div>
     <div class="tile" style="background-image:url('images/collage/11.jpg')"></div>
+    <div class="tile" style="background-image:url('images/collage/3.jpg')"></div>
     <div class="tile" style="background-image:url('images/collage/6.jpg')"></div>
-    <div class="tile" style="background-image:url('images/collage/12.jpg')"></div>
   </div>
   <div class="shade"></div>
   <div class="hearts" id="hearts" aria-hidden="true"></div>
@@ -30,15 +43,15 @@
     <div class="hero-inner">
       <p class="eyebrow">Happy Anniversary</p>
       <h1>Our 4 Year<br>Love Anniversary</h1>
-      <div class="divider"><span>❤</span></div>
+      <div class="divider"><svg class="ico" style="width:22px;height:22px"><use href="#pheart"/></svg></div>
       <p class="verse">
         Two imperfect hearts that fit perfectly together.<br>
         Every flaw, every laugh, every little moment,<br>
-        every time we <span class="nb">choose us. ❤️</span><br>
-        <strong class="wish">You are always my <span class="nb">11:11 wish. ✨</span></strong>
+        every time we <span class="nb">choose us. <svg class="ico"><use href="#pheart"/></svg></span><br>
+        <strong class="wish">You are always my <span class="nb">11:11 wish. <svg class="ico"><use href="#pheart"/></svg></span></strong>
       </p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="memories.html">Our Memories 📸</a>
+        <a class="btn btn-primary" href="memories.html">Our Memories <svg class="ico"><use href="#pheart"/></svg></a>
       </div>
     </div>
   </section>
