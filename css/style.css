@@ -223,6 +223,8 @@ body.landing { background: #2a0f24; overflow-x: hidden; }
 .divider::before, .divider::after { content: ''; height: 1px; width: 70px; background: linear-gradient(90deg, transparent, rgba(255, 190, 210, .8)); }
 .divider::after { transform: scaleX(-1); }
 
+.verse .wish { display: inline-block; margin-top: 14px; font-family: 'Great Vibes', cursive; font-weight: 400; font-size: 1.5em; color: #ffd6e4; text-shadow: 0 0 18px rgba(255, 120, 170, .7), 0 2px 12px rgba(0, 0, 0, .5); }
+
 /* flying hearts */
 .heart { bottom: -60px; animation-name: flyHeart; animation-timing-function: ease-in; animation-fill-mode: forwards; filter: drop-shadow(0 0 8px rgba(255, 90, 140, .6)); }
 @keyframes flyHeart {
